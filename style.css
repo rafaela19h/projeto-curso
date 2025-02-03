@@ -32,6 +32,7 @@ body {
   background-size: cover;
   */
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh; /*ajuda adaptar o tamanho (cima e baixo) para outras telas*/
 }
 
 body * {
@@ -56,7 +57,7 @@ body * {
 }
 
 #profile p {
-  margin-top: 8px ;
+  margin-top: 8px;
   font-weight: 500;
   line-height: 24px;
 }
@@ -83,7 +84,9 @@ body * {
   top: 50%; /*posiciona 1/2*/
   left: 0; /*canto esquerdo*/
   z-index: 1; /*coloca button por cima do span*/
-  transform: translateY(-50%); /*movimenta o buttom dentro da borda "span" no Y*/
+  transform: translateY(
+    -50%
+  ); /*movimenta o buttom dentro da borda "span" no Y*/
 }
 
 .light #switch button {
@@ -98,7 +101,9 @@ body * {
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
   backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px); /*utilizado para ser usado em outros navegadores*/
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /*utilizado para ser usado em outros navegadores*/
   border-radius: 9999px;
 }
 
@@ -164,4 +169,15 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/*midia queries. Adaptação para outras telas*/
+@media (min-width: 700px) {
+  :root {
+    --br-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --br-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
