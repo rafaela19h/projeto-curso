@@ -14,8 +14,6 @@ function togglemode() {
   } else {
     //se não, manter a imagem normal (se tiver sem light)
     img.setAttribute("src", "./assets/avatar.png")
-    img.setAttribute(
-      "alt","foto de Mayk Brito sorrindo, usando óculos e camisa preta, barba e fundo amarelo"
-    )
+    img.setAttribute("alt","foto de Mayk Brito sorrindo, usando óculos e camisa preta, barba e fundo amarelo")
   }
 }

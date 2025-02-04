@@ -84,14 +84,17 @@ body * {
   top: 50%; /*posiciona 1/2*/
   left: 0; /*canto esquerdo*/
   z-index: 1; /*coloca button por cima do span*/
-  transform: translateY(
-    -50%
-  ); /*movimenta o buttom dentro da borda "span" no Y*/
+  transform: translateY(-50%); /*movimenta o buttom dentro da borda "span" no Y*/
+
+  animation: slide-black 0.2s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -179,5 +182,24 @@ footer {
 
   .light {
     --br-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/*animações no botão*/
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-black {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
